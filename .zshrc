@@ -24,6 +24,7 @@ setopt hist_reduce_blanks
 setopt hist_save_no_dups
 setopt hist_expand
 
+setopt auto_pushd
 setopt auto_cd
 setopt correct
 setopt list_packed
