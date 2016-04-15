@@ -7,8 +7,8 @@ set-window-option -g window-status-separator '  '
 
 ## Status bar
 set-option -g status-interval 1
-set-option -g status-bg blue
-set-window-option -g window-status-current-fg blue
+set-option -g status-bg green
+set-window-option -g window-status-current-fg green
 set-window-option -g window-status-current-bg black
 
 #set-option -g pane-active-border-style 'bg=green,fg=black'
