@@ -34,7 +34,3 @@ setopt list_packed
 PROMPT="[%F{cyan}%B%n%b%f@%F{magenta}%M%f]%#"
 RPROMPT="[%F{green}%d%f]"
 
-# tmux自動起動
-if [ -z $TMUX ] && [ $UID!=100030 ]; then
-    tmux -2
-fi
