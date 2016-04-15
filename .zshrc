@@ -7,6 +7,7 @@ case "${OSTYPE}" in
 	    alias open='cygstart';;
 esac
 
+alias ls="ls --color=auto"
 alias ll="ls -al"
 export TERM="xterm-256color"
 
@@ -30,7 +31,10 @@ zstyle ':completion:*' group-name ''
 ## Color
 autoload colors
 colors
-export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+export LSCOLORS=Exfxcxdxbxegedabagacad
+export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+export ZLS_COLORS=$LS_COLORS
+export CLICOLOR=true
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 
@@ -49,6 +53,7 @@ setopt auto_pushd
 setopt auto_cd
 setopt correct
 setopt list_packed
+setopt no_beep
 
 PROMPT="[%F{cyan}%B%n%b%f@%F{magenta}%M%f]%#"
 RPROMPT="[%F{green}%d%f]"
