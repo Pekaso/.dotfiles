@@ -3,10 +3,12 @@ case "${OSTYPE}" in
 	    df -hl;;
     linux*)	# Linux
 	    alias emacs='/usr/bin/emacs -nw';;
+        
     cygwin*)    # Cygwin
-	    alias open='cygstart'
-        export TERM="xterm-256color";;
+	    alias open='cygstart';;
 esac
+
+export TERM="xterm-256color"
 
 autoload -U promptinit
 promptinit

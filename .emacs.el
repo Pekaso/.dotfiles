@@ -24,6 +24,8 @@
 (column-number-mode t)
 (show-paren-mode 1)
 (global-hl-line-mode t)
+(global-linum-mode t)
+(setq linum-format "%4d||")
 (custom-set-faces
  '(hl-line ((t (:background "color-236"))))
  )
