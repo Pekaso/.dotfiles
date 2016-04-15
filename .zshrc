@@ -34,3 +34,16 @@ setopt list_packed
 PROMPT="[%F{cyan}%B%n%b%f@%F{magenta}%M%f]%#"
 RPROMPT="[%F{green}%d%f]"
 
+if [ $(id -u) != 0 ]; then
+    if [ ! $TMUX ]; then
+        if $(tmux has-session 2> /dev/null); then
+            tmux attach
+        else
+            if [ $SSH_CLIENT ]; then
+                tmux -f ~/.tmux.conf.ssh
+            else
+                tmux -f ~/.tmux.conf
+            fi
+        fi
+    fi
+fi
