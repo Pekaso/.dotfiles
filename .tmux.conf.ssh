@@ -1,7 +1,7 @@
 
 ## Appearance
 set-option -g status-left '[#S]  '
-set-option -g status-right '#H: %y/%m/%d %T'
+set-option -g status-right '#H: [^q] %y/%m/%d %T'
 #set-window-option -g window-status-current-style 'reverse'
 set-window-option -g window-status-separator '  '
 
