@@ -1,7 +1,6 @@
-
 ## Appearance
 set-option -g status-left '[#S]  '
-set-option -g status-right '#H: [^q] %y/%m/%d %T'
+set-option -g status-right '#H: [^q] : SSH Remote Access'
 #set-window-option -g window-status-current-style 'reverse'
 set-window-option -g window-status-separator '  '
 
@@ -21,6 +20,9 @@ set-option -g set-titles-string '#T'
 #set-option -g mouse on
 #bind -n WheelUpPane if-shell -F -t = "#{mouse_any_flag}" "send-keys -M" "if -Ft= '#{pane_in_mode}' 'send-keys -M' 'select-pane -t=; copy-mode -e; send-keys -M'"
 #bind -n WheelDownPane select-pane -t= \; send-keys -M
+
+## Window resize option
+set-window-option -g aggressive-resize on
 
 #KeyBind
 set-option -g prefix C-q
