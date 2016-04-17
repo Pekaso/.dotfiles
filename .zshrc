@@ -2,7 +2,7 @@ case "${OSTYPE}" in
     darwin*)	# Mac
 	    df -hl;;
     linux*)	# Linux
-	    alias emacs='/usr/bin/emacs -nw';;        
+	    alias emacs='/usr/bin/emacs -nw';;
     cygwin*)    # Cygwin
 	    alias open='cygstart';;
 esac
