@@ -2,13 +2,15 @@ case "${OSTYPE}" in
     darwin*)	# Mac
 	    df -hl;;
     linux*)	# Linux
-	    alias emacs='/usr/bin/emacs -nw';;
+	    alias emacs='/usr/bin/emacs -nw'
+        alias ls="ls --color=auto"
+        alias ll="ls -al";;
     cygwin*)    # Cygwin
-	    alias open='cygstart';;
+	    alias open='cygstart'
+        alias ls="ls --color=auto"
+        alias ll="ls -al";;
 esac
 
-alias ls="ls --color=auto"
-alias ll="ls -al"
 export TERM="xterm-256color"
 
 autoload -U promptinit
