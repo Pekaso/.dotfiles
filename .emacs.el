@@ -30,6 +30,8 @@
  '(hl-line ((t (:background "color-236"))))
  )
 
+;; (yes/no) -> (y/n)
+(fset 'yes-or-no-p 'y-or-n-p)
 
 ;; tab->space
 (setq-default tab-width 4 indent-tabs-mode nil)

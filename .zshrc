@@ -21,6 +21,15 @@ compinit
 setopt correct
 zstyle ':completion:*:default' menu select=1
 
+## Color
+autoload colors
+colors
+export LSCOLORS=GxFxDxDxhxDgDxabagacad
+export LS_COLORS='di=01;36:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=42;30'
+export ZLS_COLORS=$LS_COLORS
+export CLICOLOR=true
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
 ## Autocomplete-Colors
 zstyle ':completion:*' verbose yes
 zstyle ':completion:*' completer _expand _complete _match _prefix _approximate _list _history
@@ -30,16 +39,6 @@ zstyle ':completion:*:descriptions' format '%F{YELLOW}completing %B%d%b'$DEFAULT
 zstyle ':completion:*:options' description 'yes'
 zstyle ':completion:*:descriptions' format '%F{yellow}Completing %B%d%b%f'$DEFAULT
 zstyle ':completion:*' group-name ''
-
-## Color
-autoload colors
-colors
-export LSCOLORS=Exfxcxdxbxegedabagacad
-export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-export ZLS_COLORS=$LS_COLORS
-export CLICOLOR=true
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-
 
 ## History
 export HISTFILE=${HOME}/.zsh_history
