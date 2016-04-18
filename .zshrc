@@ -12,6 +12,7 @@ case "${OSTYPE}" in
 esac
 
 export TERM="xterm-256color"
+function chpwd() { ls -A -G -F}
 
 autoload -U promptinit
 promptinit
