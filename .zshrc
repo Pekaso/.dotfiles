@@ -11,6 +11,7 @@ case "${OSTYPE}" in
         alias ll="ls -al";;
 esac
 
+alias sudo='sudo '
 export TERM="xterm-256color"
 function chpwd() { ls -A -G -F}
 
