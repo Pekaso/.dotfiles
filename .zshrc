@@ -4,7 +4,8 @@ case "${OSTYPE}" in
     linux*)	# Linux
 	    alias emacs='/usr/bin/emacs -nw'
         alias ls="ls --color=auto"
-        alias ll="ls -al";;
+        alias ll="ls -al"
+        alias open='xdg-open';;
     cygwin*)    # Cygwin
 	    alias open='cygstart'
         alias ls="ls --color=auto"
