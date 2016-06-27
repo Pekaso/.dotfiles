@@ -1,6 +1,6 @@
 ;; load-path
 (setq load-path (cons (expand-file-name "~/.emacs.d/vhdl-mode") load-path))
-(setq load-path (cons (expand-file-name "~/.emacs.d/color-theme") load-path))
+(setq custom-theme-directory "~/.emacs.d/themes/")
 
 ;; 日本語設定
 (set-locale-environment nil)
@@ -65,6 +65,4 @@
 (menu-bar-mode -1)
 
 ;; color-theme
-(require 'color-theme)
-(color-theme-initialize)
-(color-theme-charcoal-black)
+(load-theme 'molokai t)
