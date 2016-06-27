@@ -1,5 +1,5 @@
 ;; load-path
-(setq load-path (cons (expand-file-name "~/.emacs.d/") load-path))
+(setq load-path (cons (expand-file-name "~/.emacs.d/vhdl-mode") load-path))
 
 ;; 日本語設定
 (set-locale-environment nil)
