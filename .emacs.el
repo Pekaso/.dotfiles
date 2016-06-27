@@ -1,5 +1,6 @@
 ;; load-path
 (setq load-path (cons (expand-file-name "~/.emacs.d/vhdl-mode") load-path))
+(setq load-path (cons (expand-file-name "~/.emacs.d/color-theme") load-path))
 
 ;; 日本語設定
 (set-locale-environment nil)
@@ -30,18 +31,29 @@
 (column-number-mode t)
 (show-paren-mode 1)
 (setq show-paren-style 'mixed)
-(set-face-background 'show-paren-match-face "grey")
-(set-face-foreground 'show-paren-match-face "black")
+;;(set-face-background 'show-paren-match-face "grey")
+;;(set-face-foreground 'show-paren-match-face "black")
 (global-hl-line-mode t)
 (global-linum-mode t)
-(setq linum-format "%04d||")
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(font-lock-function-name-face ((t (:foreground "brightblue"))))
- '(hl-line ((t (:background "color-236")))))
+(setq linum-format "|%4d| ")
+
+;; modeline
+(defvar my-lines-page-mode t)
+(defvar my-mode-line-format)
+
+(when my-lines-page-mode
+  (setq my-mode-line-format "%4d")
+  (if size-indication-mode
+      (setq my-mode-line-format (concat my-mode-line-format " of %%I")))
+  (cond ((and (eq line-number-mode t) (eq column-number-mode t))
+         (setq my-mode-line-format (concat my-mode-line-format " (%%l,%%c)")))
+        ((eq line-number-mode t)
+         (setq my-mode-line-format (concat my-mode-line-format " L%%l")))
+        ((eq column-number-mode t)
+         (setq my-mode-line-format (concat my-mode-line-format " C%%c"))))
+
+  (setq mode-line-position
+        '(:eval (format my-mode-line-format (count-lines (point-max) (point-min))))))
 
 ;; (yes/no) -> (y/n)
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -52,12 +64,7 @@
 ;; menubar and toolbar
 (menu-bar-mode -1)
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(ansi-color-names-vector ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
- '(custom-enabled-themes (quote (wheatgrass))))
-
-
+;; color-theme
+(require 'color-theme)
+(color-theme-initialize)
+(color-theme-charcoal-black)

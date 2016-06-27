@@ -4,6 +4,7 @@ echo "###環境一括設定用スクリプト by Pekaso###"
 echo "このスクリプトでは設定ファイルのシンボリックリンクを設定します．"
 echo "以下のソフトウェアのインストールが必要となります．"
 echo "[zsh, tmux, emacs, openssh]"
+echo "あとemacsのcolor-theme-6.6.0も入れます"
 echo ""
 echo "開始してよろしいでしょうか？ [Y/n]"
 read ANSWER
@@ -16,6 +17,7 @@ case $ANSWER in
     ln -s ~/.dotfiles/.tmux.conf ~/.tmux.conf
     ln -s ~/.dotfiles/.tmux.conf.ssh ~/.tmux.conf.ssh
     ln -s ~/.dotfiles/.emacs.el ~/.emacs.el
+    ln -s ~/.dotfiles/color-theme ~/.emacs.d/color-theme
     echo "設定終了";;
     *  ) echo "キャンセルしました．";;
 esac
