@@ -65,4 +65,4 @@
 (menu-bar-mode -1)
 
 ;; color-theme
-(load-theme 'molokai t)
+(load-theme 'pekaso t)
