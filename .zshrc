@@ -1,6 +1,8 @@
 case "${OSTYPE}" in
     darwin*)	# Mac
-	    df -hl;;
+	    df -hl
+        export WORKON_HOME=$HOME/.virtualenvs
+        source /usr/local/bin/virtualenvwrapper.sh;;
     linux*)	# Linux
 	    alias emacs='/usr/bin/emacs -nw'
         alias ls="ls --color=auto"
