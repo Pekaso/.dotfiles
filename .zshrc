@@ -50,6 +50,8 @@ export HISTSIZE=1000
 export SAVEHIST=100000
 setopt hist_ignore_dups
 setopt EXTENDED_HISTORY
+setopt share_history
+setopt append_history
 setopt hist_reduce_blanks
 setopt hist_save_no_dups
 setopt hist_expand
