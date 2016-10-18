@@ -16,6 +16,7 @@ case $ANSWER in
     ln -s ~/.dotfiles/.tmux.conf ~/.tmux.conf
     ln -s ~/.dotfiles/.tmux.conf.ssh ~/.tmux.conf.ssh
     ln -s ~/.dotfiles/.emacs.el ~/.emacs.el
+    mkdir -p ~/.emacs.d
     ln -s ~/.dotfiles/themes ~/.emacs.d/themes
     echo "設定終了";;
     *  ) echo "キャンセルしました．";;
