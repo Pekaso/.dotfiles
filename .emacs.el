@@ -33,6 +33,18 @@
 (setq show-paren-style 'mixed)
 ;;(set-face-background 'show-paren-match-face "grey")
 ;;(set-face-foreground 'show-paren-match-face "black")
+(defface hlline-face
+  '((((class color)
+      (background dark))
+     (:background "dark slate gray"))
+    (((class color)
+      (background light))
+     (:background "OliveDrab1"))
+    (t
+     ()))
+  "*Face used by hl-line.")
+;; (setq hl-line-face 'hlline-face)
+(setq hl-line-face 'underline) ; 下線
 (global-hl-line-mode t)
 (global-linum-mode t)
 (setq linum-format "|%4d| ")
