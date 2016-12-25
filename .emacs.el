@@ -1,6 +1,25 @@
 ;; load-path
 (setq load-path (cons (expand-file-name "~/.emacs.d/vhdl-mode") load-path))
-(setq custom-theme-directory "~/.emacs.d/themes/")
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/site-lisp/yasnippet"))
+(add-to-list 'custom-theme-load-path "~/.dotfiles/themes/")
+;(add-to-list 'load-path "~/.emacs.d/themes/")
+;(setq custom-theme-directory "~/.emacs.d/themes/")
+
+;;ysnippets
+(require 'yasnippet)
+(setq yas-snippet-dirs
+      '("~/.emacs.d/mysnippets"
+        "~/.emacs.d/yasnippet-snippets"
+        ))
+
+;; 既存スニペットを挿入する
+(define-key yas-minor-mode-map (kbd "C-x i i") 'yas-insert-snippet)
+;; 新規スニペットを作成するバッファを用意する
+(define-key yas-minor-mode-map (kbd "C-x i n") 'yas-new-snippet)
+;; 既存スニペットを閲覧・編集する
+(define-key yas-minor-mode-map (kbd "C-x i v") 'yas-visit-snippet-file)
+ 
+(yas-global-mode 1)
 
 ;; 日本語設定
 (set-locale-environment nil)
@@ -77,4 +96,6 @@
 (menu-bar-mode -1)
 
 ;; color-theme
+;(load "molokai-theme.el")
 (load-theme 'molokai t)
+
