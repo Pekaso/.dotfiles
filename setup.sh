@@ -18,8 +18,10 @@ case $ANSWER in
     ln -s ~/.dotfiles/.emacs.el ~/.emacs.el
     mkdir -p ~/.emacs.d
     ln -s ~/.dotfiles/themes ~/.emacs.d/themes
-    cd ~/.emacs.d/
+    mkdir -p ~/.emacs.d/site-lisp
+    cd ~/.emacs.d/site-lisp/
     git clone git@github.com:joaotavora/yasnippet.git
+    cd ~/.emacs.d/
     git clone git@github.com:AndreaCrotti/yasnippet-snippets.git
     mkdir -p ~/.emacs.d/mysnippets
     echo "設定終了";;
