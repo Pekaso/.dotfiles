@@ -23,7 +23,7 @@ case $ANSWER in
     git clone git@github.com:joaotavora/yasnippet.git
     cd ~/.emacs.d/
     git clone git@github.com:AndreaCrotti/yasnippet-snippets.git
-    mkdir -p ~/.emacs.d/mysnippets
+    git clone git@github.com:Pekaso/mysnippets.git
     echo "設定終了";;
     *  ) echo "キャンセルしました．";;
 esac
