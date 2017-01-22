@@ -62,6 +62,7 @@ setopt auto_cd
 setopt correct
 setopt list_packed
 setopt no_beep
+setopt nonomatch
 
 PROMPT="[%F{cyan}%B%n%b%f@%F{magenta}%M%f]%#"
 RPROMPT="[%F{green}%d%f]"

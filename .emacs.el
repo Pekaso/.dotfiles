@@ -1,9 +1,36 @@
 ;; load-path
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+(package-initialize)
+
 (setq load-path (cons (expand-file-name "~/.emacs.d/vhdl-mode") load-path))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/site-lisp/yasnippet"))
 (add-to-list 'custom-theme-load-path "~/.dotfiles/themes/")
 ;(add-to-list 'load-path "~/.emacs.d/themes/")
 ;(setq custom-theme-directory "~/.emacs.d/themes/")
+
+;; Auto Complete
+(require 'auto-complete-config)
+(set-default 'ac-sources
+  '(ac-source-yasnippet))
+(global-auto-complete-mode 1)
+(setq ac-use-menu-map t)
+(ac-config-default)
+(add-to-list 'ac-modes 'text-mode)         ;; text-modeでも自動的に有効にする
+(add-to-list 'ac-modes 'fundamental-mode)  ;; fundamental-mode
+(add-to-list 'ac-modes 'org-mode)
+(add-to-list 'ac-modes 'latex-mode)
+(ac-set-trigger-key "TAB")
+(setq ac-use-menu-map t)       ;; 補完メニュー表示時にC-n/C-pで補完候補選択
+(setq ac-use-fuzzy t)          ;; 曖昧マッチ
+(global-auto-complete-mode 1)
+(setq ac-use-menu-map t)
 
 ;;ysnippets
 (require 'yasnippet)
@@ -65,6 +92,9 @@
 ;; (setq hl-line-face 'hlline-face)
 (setq hl-line-face 'underline) ; 下線
 (global-hl-line-mode t)
+(setq linum-delay t)
+(defadvice linum-schedule (around my-linum-schedule () activate)
+  (run-with-idle-timer 0.2 nil #'linum-update-current))
 (global-linum-mode t)
 (setq linum-format "|%4d| ")
 
@@ -99,3 +129,15 @@
 ;(load "molokai-theme.el")
 (load-theme 'molokai t)
 
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages (quote (auto-complete))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
