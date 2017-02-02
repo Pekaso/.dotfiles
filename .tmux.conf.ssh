@@ -1,14 +1,19 @@
 ## Appearance
-set-option -g status-left '[#S]  '
-set-option -g status-right '#H: [^q] : SSH Remote Access'
-#set-window-option -g window-status-current-style 'reverse'
-set-window-option -g window-status-separator '  '
+set-option -g status-left '#[fg=colour255,bg=colour241]#{?client_prefix,#[reverse],} #H[#S] #[default]'
+set-option -g status-right '#[fg=colour255,bg=colour5] SSH #[default]#[fg=colour255,bg=colour241][^t] %y/%m/%d %T #[default]'
+set-option -g status-bg 'colour238'
+set-option -g status-fg 'colour255'
+set-window-option -g window-status-current-bg 'colour28'
+##set-window-option -g window-status-separator '|'
+
+#set-option -g pane-active-border-style '#[bg=green,fg=black] [] #[default]'
+set-option -g pane-border-status off
+
+## Pack a window-number when window closed
+set-option -g renumber-windows on
 
 ## Status bar
 set-option -g status-interval 1
-set-option -g status-bg green
-set-window-option -g window-status-current-fg green
-set-window-option -g window-status-current-bg black
 
 #set-option -g pane-active-border-style 'bg=green,fg=black'
 
